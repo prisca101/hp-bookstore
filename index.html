@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="/css/main.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <!-- https://getbootstrap.com/docs/5.0/components/navs-tabs/ -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark pt-3 pb-3">
+        <!-- need to say that this is gonna be an expanded navbar. when we're below medium sized screen, we're gonna show the toggle button. when we got to medium sized screen and up, we gonna expand that into an actual navbar  -->
+        <!-- navbar-light is the theme for the navbar -->
+        <!-- we can add bg-primary or smth but make sure to also style the navbar components itself, such as navbar-light to make sure the texts/links are styled properly, etc -->
+        <div class="container-xxl">
+            <!-- this is needed if you want to start the nav bar from a certain place (not full from corner to corner)-->
+            <!-- navbar brand / title -->
+            <a class="navbar-brand" href="#intro"> <!-- href to the element with the id intro -->
+                <img src="./assets/logo.webp" alt="logo" class="img-fluid" style="height: 40px;">
+                <span class="text-light fw-bold">
+                    Harry Potter - Bookstore
+                </span>
+            </a>
+            <!-- toggle button for mobile nav -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- data-bs-toggle="collapse" is saying what's it gonna toggle, in this case smth w/ the class of collapse.
+            data-bs-target="#main-nav" tells which "collapse" section we want to target (a list of links w/ the id main-nav)
+            aria-controls="main-nav" aria-expanded="false" are for the benefit of screen readers so they understand (for those who didnt understand JavaScript) so they know a lil bit more about the structure of the web page
+            -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse justify-content-end align-items-center" id="main-nav">
+                <!-- see, this has the class "collapse" navbar-collapse is a must that style / function the navbar collapse for us. -->
+                <!-- justify-content-end manipulates the x axis (horizontal) while align-items-center manipulates the y axis (vertical) -->
+                <!-- id="main-nav" is the data-bs-target or what's gonna be shown/hidden -->
+                <ul class="navbar-nav"> <!-- this is for bootstrap's styling purposes, this is in the documentation -->
+                    <!-- ul is used to create a container for an unordered list of items. li is used to define each individual item in a list -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#topics"><i class="bi bi-info-circle"></i> About The Book</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Get in Touch</a>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <!-- it is not shown on medium sized screens & up (meaning it will show on small screens) -->
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <!-- d-none means not shown on smaller screens. on larger screens (when it gets to medium sized) we display inline -->
+                        <a class="btn btn-primary" href="#pricing">buy now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <div class="row m-0 g-0">
+            <div class="col-md-12">
+                <div class="bg-container">
+                    <img src="./assets/bg2.jpg" alt="Image" class="img-fluid">
+                    <div class="overlay-text text-light">
+                        <h1>Hogwarts' Magical Library</h1>
+                        <p class="lead d-none d-md-block" style="font-size: 20;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque adipisci modi quos sapiente. Excepturi doloremque repudiandae consequuntur, nobis ex dicta.</p>
+                        <i class="bi bi-arrow-down-square" style="font-size: 2rem;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section id="intro">
+        <div class="container-lg my-5">
+            <div class="row g-4 justify-content-center align-items-center">
+                <!-- align-items-center means positioning all elements to the center inside the box / container, in this case the columns -->
+                <div class="col-md-7 text-center text-md-start">
+                    <!-- default 12 columns for small screens, and the text is positioned at the center. for medium sized screens & up takes 5 columns, then the text is positioned at the start -->
+                    <h2>
+                        <div class="fw-bold">Harry Potter</div>
+                        <div class="text-muted">and the Philosopher's Stone</div>
+                    </h2>
+                    <p class="lead my-4 text-muted">Harry Potter is a wizard, and he has a place at Hogwarts School of Witchcraft and Wizardry. An incredible adventure is about to begin!</p>
+                    <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
+                    <!-- open sidebar / offcanvas -->
+                    <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button"
+                        aria-controls="sidebar">
+                        <!-- aria-controls refer to the id section of which we wanted to control -->
+                        Explore other books in this series
+                    </a>
+                </div>
+                <div class="col-md-5 pt-5 text-center d-none d-md-block">
+                    <!-- d-none means display none by default for small screens. d-md-block means display as block for medium sized screens & up -->
+                    <span class="tt" data-bs-placement="top" title="Harry Potter Cover">
+                        <img src="/assets/book10.jpg" class="img-fluid" alt="ebook" style="height: 550px; width: auto;">
+                        <!-- fluid is to make 100% width of the parent element, so basically the styles is following the parent element, in this case: col-md-5 text-center -->
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARD CARD CARD
+    CARD CARD CARD CARD CARD CARD
+    CARD CARD CARD CARD CARD CARD -->
+    <section id="pricing" class="bg-dark text-light">
+        <div class="container-lg py-5">
+            <div class="text-center">
+                <div class="display-4">Pricing Plans</div>
+                <p class="lead">Choose a pricing plan to suit you.</p>
+            </div>
+
+            <div class="row my-5 g-0 align-items-center justify-content-center">
+                <div class="col-8 col-lg-4 col-xl-3">
+                    <div class="card border-0 rounded-0">
+                        <!-- class="card" is a must for every card. border-0 makes it so that there's no border (0). -->
+                        <div class="card-body text-center py-4">
+                            <!-- card-body is for the context inside the card -->
+                            <h4 class="card-title fw-bold display-6">Paperback</h4>
+                            <p class="lead card-subtitle">Lorem ipsum dolor sit.</p>
+                            <!-- card-subtitle is the subtitle for the card, already been styled by bootstrap -->
+                            <p class="display-5 my-4 text-primary fw-bold">$5.99</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis
+                                saepe dolorum.</p>
+                            <!-- card-text is another bootstrap class. d-none means on smaller screans it wont be displayed but when it reaches larger screens it's gonna be displayed as block (d-lg-block) -->
+                            <a href="#" class="btn btn-outline-primary btn-lg mt-3">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-9 col-lg-4">
+                    <div class="card border-primary border-5 rounded-4">
+                        <!-- border-2 is the thickness of the border, duh. -->
+                        <div class="card-header text-center text-primary">Most Popular</div>
+                        <!-- makes a strip / jutted out a part -->
+                        <div class="card-body text-center py-5">
+                            <h4 class="card-title fw-bold display-5">Hardcover</h4>
+                            <p class="lead card-subtitle">Lorem ipsum dolor sit amet.</p>
+                            <p class="display-4 my-4 text-primary fw-bold">$25.15</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis
+                                saepe dolorum.</p>
+                            <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-8 col-lg-4 col-xl-3">
+                    <div class="card border-0 rounded-0">
+                        <div class="card-body text-center py-4">
+                            <h4 class="card-title fw-bold display-6">Mass Market Paperback</h4>
+                            <p class="lead card-subtitle">Lorem ipsum dolor sit.</p>
+                            <p class="display-5 my-4 text-primary fw-bold">$9.15</p>
+                            <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Mollitia, vitae magni! Repellat commodi a fuga corporis
+                                saepe dolorum.</p>
+                            <a href="#" class="btn btn-outline-primary btn-lg mt-3">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCORDIONS ACCORDIONS
+    ACCORDIONS ACCORDIONS ACCORDIONS ACCORDIONS
+    ACCORDIONS ACCORDIONS ACCORDIONS ACCORDIONS -->
+    <!-- topics at a glance -->
+    <section id="topics">
+        <div class="container-md py-5">
+            <div class="text-center">
+                <h4>Inside the Book...</h4>
+                <p class="lead text-muted">A quick glance to the world of mysteries</p>
+            </div>
+
+            <div class="row mt-1 mb-5 g-5 justify-content-around align-items-center">
+                <!-- justify-content-around means spreading around the content if there's any empty space & the gaps stayed equal -->
+                <div class="col-6 col-lg-5">
+                    <div id="carouselThumbnails" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselThumbnails" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselThumbnails" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselThumbnails" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                          <button type="button" data-bs-target="#carouselThumbnails" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                          <button type="button" data-bs-target="#carouselThumbnails" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                          <button type="button" data-bs-target="#carouselThumbnails" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                          <button type="button" data-bs-target="#carouselThumbnails" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="./assets/book9.jpg" class="d-block w-100" alt="b-thumbnail">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./assets/book11.jpg" class="d-block w-100" alt="b-thumbnail">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./assets/book12.jpg" class="d-block w-100" alt="b-thumbnail">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./assets/book13.jpg" class="d-block w-100" alt="b-thumbnail">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./assets/book14.jpg" class="d-block w-100" alt="b-thumbnail">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./assets/book15.jpg" class="d-block w-100" alt="b-thumbnail">
+                              </div>
+                              <div class="carousel-item">
+                                <img src="./assets/book16.jpg" class="d-block w-100" alt="b-thumbnail">
+                              </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselThumbnails" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselThumbnails" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
+                      </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- accordion -->
+                    <div class="accordion" id="chapters">
+                        <div class="accordion-item"> <!-- everything inside the accordion (content) -->
+                            <!-- the title or heading of the accordion -->
+                            <div class="accordion-header" id="heading-1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#chapter-1" aria-expanded="true" aria-controls="chapter-1">
+                                    <!-- the data-bs-target and aria-controls are corresponding to each other because the target is the div with the matching id while aria-controls controlled that div id (opens and closes it) -->
+                                    Chapter 1 - The Boy Who Lived
+                                </button>
+                            </div>
+                            <div id="chapter-1" class="accordion-collapse collapse show" aria-labelledby="heading-1"
+                                data-bs-parent="#chapters">
+                                <!-- show means by default when we load the page that's gonna be opened. so if we didn't specify it, it's gonna be closed. the rest is a bootstrap thing -->
+                                <!-- aria-labelledby is associating which element of the accordion / heading it refers to. -->
+                                <!-- data-bs-parent specifies which parent this belong to or which accordion this belongs to -->
+                                <div class="accordion-body">
+                                    <p>In which we meet the Dursleys and learn of the peculiar happenings surrounding
+                                        the arrival of Harry Potter on their doorstep including a conversation between
+                                        Professors Dumbledore and McGonagall.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="heading-2">
+                                <button class="accordion-button collapsed " type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#chapter-2" aria-expanded="false"
+                                    aria-controls="chapter-2">
+                                    Chapter 2 - The Vanishing Glass
+                                </button>
+                            </div>
+                            <div id="chapter-2" class="accordion-collapse collapse" aria-labelledby="heading-2"
+                                data-bs-parent="#chapters">
+                                <div class="accordion-body">
+                                    <p>In which is related the sad circumstances under which Harry has lived for the
+                                        past ten years and of a trip to the zoo that goes awry.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="heading-3">
+                                <button class="accordion-button collapsed " type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#chapter-3" aria-expanded="false"
+                                    aria-controls="chapter-1">
+                                    Chapter 3 - The Letters From No One
+                                </button>
+                            </div>
+                            <div id="chapter-3" class="accordion-collapse collapse" aria-labelledby="heading-3"
+                                data-bs-parent="#chapters">
+                                <div class="accordion-body">
+                                    <p>In which Dudley gets his new uniform and a letter arrives for Harry, which Uncle
+                                        Vernon destroys - prompting a veritable deluge of letters over the next few
+                                        days. Uncle Vernon then attempts to outrun the delivery of the letters and
+                                        eventually takes his family to an abandoned hut on an island in the ocean.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="heading-4">
+                                <button class="accordion-button collapsed " type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#chapter-4" aria-expanded="false"
+                                    aria-controls="chapter-4">
+                                    Chapter 4 - The Keeper of the Keys
+                                </button>
+                            </div>
+                            <div id="chapter-4" class="accordion-collapse collapse" aria-labelledby="heading-4"
+                                data-bs-parent="#chapters">
+                                <div class="accordion-body">
+                                    <p>In which Hagrid arrives at the hut and informs Harry that he is a wizard and has
+                                        been accepted into Hogwarts School of Witchcraft and Wizardry. Harry also learns
+                                        the truth about the deaths of his parents and the origin of the scar on his
+                                        forehead, much to the chagrin of his uncle.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="heading-5">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#chapter-5" aria-expanded="false"
+                                    aria-controls="chapter-5">
+                                    Chapter 5 - Diagon Alley
+                                </button>
+                            </div>
+                            <div id="chapter-5" class="accordion-collapse collapse" aria-labelledby="heading-5"
+                                data-bs-parent="#chapters">
+                                <div class="accordion-body">
+                                    <p>In which Hagrid takes Harry to Diagon Alley in London to retrieve his inheritance
+                                        and buy his school supplies, including a wand and Hedwig, a snowy owl. At the
+                                        same time Hagrid gets a secret package from Gringotts vault 713, Harry meets
+                                        Draco Malfoy, and Hagrid gives Harry his tickets for the Hogwarts Express.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- reviews lsit -->
+    <section id="reviews" class="bg-dark text-light">
+        <div class="container-lg py-5">
+            <div class="text-center">
+                <h4><i class="bi bi-stars"></i> Book Reviews</h4>
+                <p class="lead">What our customers have said about the book...</p>
+            </div>
+
+            <div class="row justify-content-center my-5 gy-2">
+                <div class="col-lg-8">
+                    <div class="list-group">
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-1 lead fw-bold">A must buy for every fantasy lover</p>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vitae
+                                repellat explicabo, similique veniam reiciendis. Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Iure voluptatibus perspiciatis, hic laboriosam saepe voluptate debitis
+                                optio id a voluptates!</p>
+                            <small>Review by The New York Times</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="list-group">
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-1 lead fw-bold">A breathtaking beautiful edition</p>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vitae
+                                repellat explicabo, similique veniam reiciendis. Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Iure voluptatibus perspiciatis, hic laboriosam saepe voluptate debitis
+                                optio id a voluptates!</p>
+                            <small>Review by The Guardian</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="list-group">
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-1 lead fw-bold">Breathtaking Artwork</p>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vitae
+                                repellat explicabo, similique veniam reiciendis. Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Iure voluptatibus perspiciatis, hic laboriosam saepe voluptate debitis
+                                optio id a voluptates!</p>
+                            <small>Review by Maya</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="list-group">
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="mb-1 lead fw-bold">If you're a Harry Potter fan, it's a must have!</p>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vitae
+                                repellat explicabo, similique veniam reiciendis. Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Iure voluptatibus perspiciatis, hic laboriosam saepe voluptate debitis
+                                optio id a voluptates!</p>
+                            <small>Review by Theodore</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="list-group">
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <p class="mb-1 lead fw-bold">Amazing!!!</p>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vitae
+                                repellat explicabo, similique veniam reiciendis. Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Iure voluptatibus perspiciatis, hic laboriosam saepe voluptate debitis
+                                optio id a voluptates!</p>
+                            <small>Review by Santa Claus</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact form -->
+    <!-- form-control, form-label, font-select, input-group, input-group-text -->
+    <!-- FORM FORM FORM FORM
+    FORM FORM FORM FORM FORM FORM FORM FORM
+    FORM FORM FORM FORM FORM FORM FORM FORM -->
+    <section id="contact">
+        <div class="container-lg my-5">
+            <div class="text-center">
+                <h4>Get in Touch</h4>
+                <p class="lead">Questions to ask? Fill out the form to contact me directly...</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <form>
+                        <label for="email" class="form-label">Email Address:</label>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope-fill"></i>
+                            </span>
+                            <input type="email" class="form-control" id="email"
+                                placeholder="maya@example.com">
+                            <!-- tooltip -->
+                            <span class="input-group-text">
+                                <span class="tt" data-bs-placement="top"
+                                    title="Enter an email address we can reply to.">
+                                    <i class="bi bi-question-circle text-muted"></i>
+                                </span>
+                            </span>
+                        </div>
+
+                        <label for="name" class="form-label">Name:</label>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">
+                                <i class="bi bi-person-fill"></i>
+                            </span>
+                            <input type="text" class="form-control" id="name" placeholder="Maya Hart">
+                            <!-- tooltip -->
+                            <span class="input-group-text">
+                                <span class="tt" data-bs-placement="top" title="Enter your name.">
+                                    <i class="bi bi-question-circle text-muted"></i>
+                                </span>
+                            </span>
+                        </div>
+
+                        <label for="subject" class="form-label">What is your question about?</label>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">
+                                <i class="bi bi-chat-right-dots-fill"></i>
+                            </span>
+                            <select class="form-select" id="subject">
+                                <option value="pricing" selected>Pricing query</option>
+                                <option value="content">Content query</option>
+                                <option value="other">Other query</option>
+                            </select>
+                        </div>
+
+                        <div class="form-floating mb-4 mt-4">
+                            <textarea class="form-control" id="query" style="height: 140px" placeholder="query"></textarea>
+                            <label for="query">Your query...</label>
+                        </div>
+
+                        <div class="text-center mb-4">
+                            <button type="submit" class="btn btn-secondary px-4">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- get updates / modal trigger -->
+    <section class="bg-dark text-light">
+        <div class="container py-5">
+            <div class="text-center">
+                <h4>Stay in The Loop</h4>
+                <p class="lead">Get the latest updates as they happen...</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+                        exercitationem voluptatibus porro, hic asperiores fuga illo voluptates obcaecati deleniti
+                        veritatis sunt saepe quasi deserunt ex ipsum. Est possimus, aspernatur, vitae eligendi rem odit
+                        quaerat, ipsum pariatur ratione maxime delectus fuga minus accusamus dolores iusto maiores
+                        accusantium cumque magnam placeat quia!</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
+                        <!-- data-bs-toggle is saying what's it's gonna toggle. in this case, an element with the class "modal" and the target id "reg-modal" -->
+                        Register for Updates
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- modal itself -->
+    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <!-- aria-labelledby will look for that id -->
+        <div class="modal-dialog">
+            <!-- all content of the modal goes here. the while bubble that pops up on the screen (background)-->
+            <div class="modal-content"> <!-- content inside the bubble -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Get the Latest Updates</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <!-- btn-close makes a cross button in the modal & bootstrap automatically positioned it in the right place.
+                    data-bs-dismiss is what to dismiss when we click on the button, in this case the class "modal" -->
+                </div>
+                <div class="modal-body">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis, exercitationem laboriosam nihil
+                        minus voluptatibus harum aliquam consequatur pariatur inventore dignissimos illum excepturi
+                        ratione ipsum sit iusto alias eligendi fugit laborum?</p>
+                    <label for="modal-email" class="form-label">Your email address:</label>
+                    <input type="email" class="form-control" id="modal-email" placeholder="maya@example.com">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- OFFCANVAS OFFCANVAS -->
+    <!-- side panel / offcanvas -->
+    <div class="offcanvas offcanvas-start bg-dark text-light" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+        <div class="offcanvas-header">
+            <h4 class="offcanvas-title" id="sidebar-label">Other Books</h4>
+            <button type="button" class="btn-close bg-secondary" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- dropdown -->
+            <p>Having become classics of our time, the Harry Potter eBooks never fail to bring comfort and escapism. With their message of hope, belonging and the enduring power of truth and love, the story of the Boy Who Lived continues to delight generations of new readers.</p>
+            <div class="dropdown mt-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="book-dropdown"
+                    data-bs-toggle="dropdown">
+                    Choose a book title
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="book-dropdown">
+                    <li><a class="dropdown-item" href="#">Harry Potter and the Chambers of Secret</a></li>
+                    <li><a class="dropdown-item" href="#">Harry Potter and the Prisoner of Azkaban</a></li>
+                    <li><a class="dropdown-item" href="#">Harry Potter and the Goblet of Fire</a></li>
+                    <li><a class="dropdown-item" href="#">Harry Potter and the Order of the Phoenix</a></li>
+                    <li><a class="dropdown-item" href="#">Harry Potter and the Half-Blood Prince</a></li>
+                    <li><a class="dropdown-item" href="#">Harry Potter and the Deathly Hallows</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script>
+        const tooltips = document.querySelectorAll('.tt')
+        tooltips.forEach(t => {
+            new bootstrap.Tooltip(t)
+        })
+    </script>
+</body>
+
+</html>
